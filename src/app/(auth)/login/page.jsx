@@ -1,0 +1,115 @@
+'use client';
+
+import { useState } from 'react';
+import Link from 'next/link';
+import { useRouter } from 'next/navigation';
+import { signIn } from '@/lib/auth-client';
+import toast from 'react-hot-toast';
+import { FaGoogle } from 'react-icons/fa';
+
+export default function LoginPage() {
+  const router = useRouter();
+  const [formData, setFormData] = useState({ email: '', password: '' });
+  const [loading, setLoading] = useState(false);
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+
+    const { error } = await signIn.email({
+      email: formData.email,
+      password: formData.password,
+      callbackURL: '/',
+    });
+
+    setLoading(false);
+
+    if (error) {
+      toast.error(error.message || 'Login failed!');
+    } else {
+      toast.success('Login successful!');
+      router.push('/');
+    }
+  };
+
+  const handleGoogleLogin = async () => {
+    await signIn.social({
+      provider: 'google',
+      callbackURL: '/',
+    });
+  };
+
+  return (
+    <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4">
+      <div className="bg-white p-8 rounded-2xl shadow-lg w-full max-w-md animate__animated animate__fadeInUp">
+        <h1 className="text-3xl font-bold text-center text-gray-800 mb-2">
+          Welcome Back
+        </h1>
+        <p className="text-gray-500 text-center mb-8">Login to your QurbaniHat account</p>
+
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <div>
+            <label className="block text-gray-700 font-medium mb-1">Email</label>
+            <input
+              type="email"
+              name="email"
+              value={formData.email}
+              onChange={handleChange}
+              required
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+              placeholder="Enter your email"
+            />
+          </div>
+          <div>
+            <label className="block text-gray-700 font-medium mb-1">Password</label>
+            <input
+              type="password"
+              name="password"
+              value={formData.password}
+              onChange={handleChange}
+              required
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+              placeholder="Enter your password"
+            />
+          </div>
+          <button
+            type="submit"
+            disabled={loading}
+            className="w-full bg-primary text-white py-3 rounded-lg font-bold hover:bg-green-700 transition disabled:opacity-50"
+          >
+            {loading ? 'Logging in...' : 'Login'}
+          </button>
+        </form>
+
+        <div className="mt-6">
+          <div className="relative">
+            <div className="absolute inset-0 flex items-center">
+              <div className="w-full border-t border-gray-300" />
+            </div>
+            <div className="relative flex justify-center text-sm">
+              <span className="px-2 bg-white text-gray-500">Or continue with</span>
+            </div>
+          </div>
+          <button
+            onClick={handleGoogleLogin}
+            className="w-full mt-4 flex items-center justify-center gap-2 bg-white border border-gray-300 text-gray-700 py-3 rounded-lg hover:bg-gray-50 transition"
+          >
+            <FaGoogle className="text-red-500" />
+            Google
+          </button>
+        </div>
+
+        <p className="mt-6 text-center text-gray-600">
+          Don't have an account?{' '}
+          <Link href="/register" className="text-primary hover:underline font-medium">
+            Register
+          </Link>
+        </p>
+      </div>
+    </div>
+  );
+}

@@ -1,11 +1,7 @@
-/** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ['i.postimg.cc', 'lh3.googleusercontent.com'],
-  },
-  async redirects() {
-    return [];
+    domains: ['images.unsplash.com', 'lh3.googleusercontent.com'],
   },
 };
 
-module.exports = nextConfig;
+export default nextConfig;
