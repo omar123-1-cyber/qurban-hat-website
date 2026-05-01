@@ -17,13 +17,13 @@ export default function Footer() {
             <h3 className="text-lg sm:text-xl font-bold mb-4">Contact Us</h3>
             <div className="space-y-3 text-gray-400 text-sm sm:text-base">
               <p className="flex items-center gap-2">
-                <FaPhone className="text-primary" /> +880 1234-567890
+                <FaPhone className="text-primary" /> +880 1606199589
               </p>
               <p className="flex items-center gap-2">
-                <FaEnvelope className="text-primary" /> info@qurbanihat.com
+                <FaEnvelope className="text-primary" /> sayeedomar359@gmail.com
               </p>
               <p className="flex items-center gap-2">
-                <FaMapMarkerAlt className="text-primary" /> Dhaka, Bangladesh
+                <FaMapMarkerAlt className="text-primary" /> Chittagong, Bangladesh
               </p>
             </div>
           </div>

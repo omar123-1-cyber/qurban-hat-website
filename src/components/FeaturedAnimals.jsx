@@ -13,7 +13,7 @@ export default function FeaturedAnimals() {
             Featured Animals
           </h2>
           <p className="text-gray-600 max-w-xl mx-auto text-sm sm:text-base">
-            Handpicked best quality animals for your Qurbani needs
+            Our best quality animals for your Qurbani needs
           </p>
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
