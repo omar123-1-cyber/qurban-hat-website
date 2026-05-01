@@ -51,65 +51,65 @@ export default function RegisterPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-50 py-12 px-4">
-      <div className="bg-white p-8 rounded-2xl shadow-lg w-full max-w-md animate__animated animate__fadeInUp">
-        <h1 className="text-3xl font-bold text-center text-gray-800 mb-2">
+    <div className="min-h-screen flex items-center justify-center bg-gray-50 py-8 sm:py-12 px-4">
+      <div className="bg-white p-6 sm:p-8 rounded-2xl shadow-lg w-full max-w-md animate__animated animate__fadeInUp">
+        <h1 className="text-2xl sm:text-3xl font-bold text-center text-gray-800 mb-2">
           Create Account
         </h1>
-        <p className="text-gray-500 text-center mb-8">Join QurbaniHat today</p>
+        <p className="text-gray-500 text-center mb-6 sm:mb-8 text-sm sm:text-base">Join QurbaniHat today</p>
 
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>
-            <label className="block text-gray-700 font-medium mb-1">Full Name</label>
+            <label className="block text-gray-700 font-medium mb-1 text-sm sm:text-base">Full Name</label>
             <input
               type="text"
               name="name"
               value={formData.name}
               onChange={handleChange}
               required
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-sm sm:text-base"
               placeholder="Enter your name"
             />
           </div>
           <div>
-            <label className="block text-gray-700 font-medium mb-1">Email</label>
+            <label className="block text-gray-700 font-medium mb-1 text-sm sm:text-base">Email</label>
             <input
               type="email"
               name="email"
               value={formData.email}
               onChange={handleChange}
               required
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-sm sm:text-base"
               placeholder="Enter your email"
             />
           </div>
           <div>
-            <label className="block text-gray-700 font-medium mb-1">Photo URL</label>
+            <label className="block text-gray-700 font-medium mb-1 text-sm sm:text-base">Photo URL</label>
             <input
               type="url"
               name="photoUrl"
               value={formData.photoUrl}
               onChange={handleChange}
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-sm sm:text-base"
               placeholder="Enter photo URL (optional)"
             />
           </div>
           <div>
-            <label className="block text-gray-700 font-medium mb-1">Password</label>
+            <label className="block text-gray-700 font-medium mb-1 text-sm sm:text-base">Password</label>
             <input
               type="password"
               name="password"
               value={formData.password}
               onChange={handleChange}
               required
-              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-sm sm:text-base"
               placeholder="Enter your password"
             />
           </div>
           <button
             type="submit"
             disabled={loading}
-            className="w-full bg-primary text-white py-3 rounded-lg font-bold hover:bg-green-700 transition disabled:opacity-50"
+            className="w-full bg-primary text-white py-2.5 sm:py-3 rounded-lg font-bold hover:bg-green-700 transition disabled:opacity-50 text-sm sm:text-base"
           >
             {loading ? 'Creating account...' : 'Register'}
           </button>
@@ -126,14 +126,14 @@ export default function RegisterPage() {
           </div>
           <button
             onClick={handleGoogleRegister}
-            className="w-full mt-4 flex items-center justify-center gap-2 bg-white border border-gray-300 text-gray-700 py-3 rounded-lg hover:bg-gray-50 transition"
+            className="w-full mt-4 flex items-center justify-center gap-2 bg-white border border-gray-300 text-gray-700 py-2.5 sm:py-3 rounded-lg hover:bg-gray-50 transition text-sm sm:text-base"
           >
             <FaGoogle className="text-red-500" />
             Google
           </button>
         </div>
 
-        <p className="mt-6 text-center text-gray-600">
+        <p className="mt-6 text-center text-gray-600 text-sm sm:text-base">
           Already have an account?{' '}
           <Link href="/login" className="text-primary hover:underline font-medium">
             Login

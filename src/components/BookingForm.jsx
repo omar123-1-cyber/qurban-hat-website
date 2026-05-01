@@ -22,58 +22,58 @@ export default function BookingForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4">
+    <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4">
       <div>
-        <label className="block text-gray-700 font-medium mb-1">Full Name</label>
+        <label className="block text-gray-700 font-medium mb-1 text-sm sm:text-base">Full Name</label>
         <input
           type="text"
           name="name"
           value={formData.name}
           onChange={handleChange}
           required
-          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-sm sm:text-base"
           placeholder="Enter your name"
         />
       </div>
       <div>
-        <label className="block text-gray-700 font-medium mb-1">Email</label>
+        <label className="block text-gray-700 font-medium mb-1 text-sm sm:text-base">Email</label>
         <input
           type="email"
           name="email"
           value={formData.email}
           onChange={handleChange}
           required
-          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-sm sm:text-base"
           placeholder="Enter your email"
         />
       </div>
       <div>
-        <label className="block text-gray-700 font-medium mb-1">Phone Number</label>
+        <label className="block text-gray-700 font-medium mb-1 text-sm sm:text-base">Phone Number</label>
         <input
           type="tel"
           name="phone"
           value={formData.phone}
           onChange={handleChange}
           required
-          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-sm sm:text-base"
           placeholder="Enter your phone number"
         />
       </div>
       <div>
-        <label className="block text-gray-700 font-medium mb-1">Address</label>
+        <label className="block text-gray-700 font-medium mb-1 text-sm sm:text-base">Address</label>
         <textarea
           name="address"
           value={formData.address}
           onChange={handleChange}
           required
           rows={3}
-          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent"
+          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent text-sm sm:text-base"
           placeholder="Enter your address"
         />
       </div>
       <button
         type="submit"
-        className="w-full bg-secondary text-white py-3 rounded-lg font-bold hover:bg-red-700 transition"
+        className="w-full bg-secondary text-white py-2.5 sm:py-3 rounded-lg font-bold hover:bg-red-700 transition text-sm sm:text-base"
       >
         Place Booking
       </button>
