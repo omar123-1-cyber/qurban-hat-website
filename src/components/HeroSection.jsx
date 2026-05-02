@@ -4,17 +4,13 @@ import Link from 'next/link';
 
 export default function HeroSection() {
   return (
-    <section className="relative bg-gradient-to-r from-primary to-green-700 text-white py-12 sm:py-16 md:py-20 overflow-hidden animate__animated animate__fadeIn">
-      <div className="absolute inset-0 opacity-10">
-        <div className="absolute top-10 left-10 w-20 h-20 sm:w-32 sm:h-32 bg-white rounded-full" />
-        <div className="absolute bottom-10 right-10 w-32 h-32 sm:w-48 sm:h-48 bg-white rounded-full" />
-      </div>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section className="bg-gradient-to-r from-primary to-green-700 text-white py-16 sm:py-20 md:py-24 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
-          <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6">
             Find Your Perfect Qurbani Animal
           </h1>
-          <p className="text-base sm:text-lg md:text-xl lg:text-2xl mb-6 sm:mb-8 text-green-100 max-w-2xl mx-auto px-2">
+          <p className="text-base sm:text-lg md:text-xl lg:text-2xl mb-6 sm:mb-8 text-green-100 max-w-2xl mx-auto">
             Book premium quality cows and goats for your Qurbani. Healthy, well-fed, and ready for the holy occasion.
           </p>
           <Link

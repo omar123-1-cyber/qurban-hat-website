@@ -2,18 +2,18 @@
 
 import { useState } from 'react';
 import Link from 'next/link';
-import { useSession, signOut } from '@/lib/auth-client';
+import { authClient } from '@/lib/auth-client';
 import { useRouter } from 'next/navigation';
 import toast from 'react-hot-toast';
 import { FaUserCircle, FaBars, FaTimes } from 'react-icons/fa';
 
 export default function Navbar() {
-  const { data: session, isPending } = useSession();
+  const { data: session, isPending } = authClient.useSession();
   const router = useRouter();
   const [menuOpen, setMenuOpen] = useState(false);
 
   const handleLogout = async () => {
-    await signOut();
+    await authClient.signOut();
     toast.success('Logged out successfully!');
     setMenuOpen(false);
     router.push('/');
@@ -33,8 +33,8 @@ export default function Navbar() {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center gap-6">
-            <Link href="/" className="hover:text-accent transition">Home</Link>
-            <Link href="/animals" className="hover:text-accent transition">All Animals</Link>
+            <Link href="/" className="hover:text-accent transition font-medium">Home</Link>
+            <Link href="/animals" className="hover:text-accent transition font-medium">All Animals</Link>
 
             {isPending ? (
               <div className="w-8 h-8 border-2 border-white border-t-transparent rounded-full animate-spin" />
@@ -54,7 +54,7 @@ export default function Navbar() {
                 </Link>
                 <button
                   onClick={handleLogout}
-                  className="bg-secondary px-4 py-2 rounded-lg hover:bg-red-700 transition text-sm"
+                  className="bg-secondary px-4 py-2 rounded-lg hover:bg-red-700 transition text-sm font-medium"
                 >
                   Logout
                 </button>
@@ -88,9 +88,9 @@ export default function Navbar() {
 
         {/* Mobile Menu */}
         {menuOpen && (
-          <div className="md:hidden pb-4 space-y-3 animate__animated animate__fadeIn">
-            <Link href="/" className="block py-2 hover:text-accent transition" onClick={closeMenu}>Home</Link>
-            <Link href="/animals" className="block py-2 hover:text-accent transition" onClick={closeMenu}>All Animals</Link>
+          <div className="md:hidden pb-4 space-y-3">
+            <Link href="/" className="block py-2 hover:text-accent transition font-medium" onClick={closeMenu}>Home</Link>
+            <Link href="/animals" className="block py-2 hover:text-accent transition font-medium" onClick={closeMenu}>All Animals</Link>
 
             {isPending ? (
               <div className="w-8 h-8 border-2 border-white border-t-transparent rounded-full animate-spin" />
@@ -106,7 +106,7 @@ export default function Navbar() {
                 </Link>
                 <button
                   onClick={handleLogout}
-                  className="w-full bg-secondary px-4 py-2 rounded-lg hover:bg-red-700 transition text-left"
+                  className="w-full bg-secondary px-4 py-2 rounded-lg hover:bg-red-700 transition text-left font-medium"
                 >
                   Logout
                 </button>

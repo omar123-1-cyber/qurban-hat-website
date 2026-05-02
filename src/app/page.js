@@ -5,7 +5,7 @@ import TopBreeds from '@/components/TopBreeds';
 
 export default function HomePage() {
   return (
-    <div>
+    <div className="min-h-screen">
       <HeroSection />
       <FeaturedAnimals />
       <QurbaniTips />

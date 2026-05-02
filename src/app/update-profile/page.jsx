@@ -58,7 +58,7 @@ export default function UpdateProfilePage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 py-8 sm:py-12 animate__animated animate__fadeIn">
+    <div className="min-h-screen bg-gray-50 py-8 sm:py-12">
       <div className="max-w-md mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-white p-6 sm:p-8 rounded-2xl shadow-lg">
           <h1 className="text-xl sm:text-2xl font-bold text-gray-800 mb-6 text-center">

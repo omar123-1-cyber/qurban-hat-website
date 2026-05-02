@@ -1,5 +1,4 @@
 import './globals.css';
-import 'animate.css';
 import Navbar from '@/components/Navbar';
 import Footer from '@/components/Footer';
 import ToastProvider from '@/components/ToastProvider';
